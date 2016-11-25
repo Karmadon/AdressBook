@@ -30,9 +30,14 @@
 			$result = mysqli_query(self::$link, $query);
 			if (!$result) {
 				http_response_code(404);
-				die(mysqli_error());
+				die(mysqli_error(self::$link));
 			} else
 				return $result;
+		}
+		
+		public static function qetLastInsertId()
+		{
+			return mysqli_insert_id(self::$link);
 		}
 		
 		public function __destruct()

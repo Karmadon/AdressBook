@@ -48,6 +48,9 @@
 				case 'edited':
 					$contact->editContact($_GET['id']);
 					break;
+				case 'view':
+					$contact->viewContact($_GET['id']);
+					break;
 			}
 		}
 			
